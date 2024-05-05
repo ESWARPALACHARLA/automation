@@ -1,22 +1,13 @@
 {
-  "extends": ["config:base"],
-  "rangeStrategy": "pin",
-  "baseBranches": ["main"],
-  "schedule": [
-    "before 5pm"
-  ],
-  "dependencyDashboard": true,
+  "extends": [ "config:base"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["pin", "digest"],
-      "groupName": "Vulnerable Dependencies",
-      "updateTypes": ["versioning"],
-      "packagePatterns": [
-        "^.*$"
-      ]
+      "enabled": false,
+      "matchPackagePatterns": ["*"]
     }
   ],
   "vulnerabilityAlerts": {
     "enabled": true
-  }
+  },
+  "osvVulnerabilityAlerts": true
 }
