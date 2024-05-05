@@ -1,5 +1,5 @@
 {
-  "extends": [ "config:base"],
+  "extends": [ "config:base","security:only-security-updates"],
   "packageRules": [
     {
       "enabled": false,
