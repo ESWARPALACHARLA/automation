@@ -1,21 +1,19 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "rangeStrategy": "pin",
+  "baseBranches": ["master"],
+  "schedule": [
+    "before 5pm"
   ],
-  "prHeader": "JamesTestHeader",
-  "assignees": [
-    "james-willett"
-  ],
-  "labels": ["dependencies-testlabel"],
+  "dependencyDashboard": true,
   "packageRules": [
     {
-      "matchPackagePatterns": ["jackson"],
-      "labels": ["jackson-testlabel"]
-    },
-    {
-      "matchPackagePatterns": ["maven"],
-      "labels": ["maven-testlabel"]
+      "matchUpdateTypes": ["pin", "digest"],
+      "groupName": "Vulnerable Dependencies",
+      "updateTypes": ["versioning"],
+      "packagePatterns": [
+        "^.*$"
+      ]
     }
   ]
 }
